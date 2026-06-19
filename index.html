@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>THE MENTAL BUDDY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Logo -->
+    <img src="images/THE MENTAL BUDDY.png" id="logo" alt="Logo">
+
+    <!-- Website Name -->
+    <h1 id="title">THE MENTAL BUDDY</h1>
+
+    <!-- Hero Section -->
+    <div class="hero">
+
+        <h1 class="hero-title">
+            <span>Let's talk about the noise</span>
+            <br>
+            <span>in our heads.</span>
+        </h1>
+
+        <div class="banner">
+            Mental health matters.
+        </div>
+
+    </div>
+
+    <!-- Photo Shuffle Section -->
+    <div class="photo-section">
+
+        <div class="photo-card">
+
+            <img
+                id="galleryImage"
+                src="images/download.jpg"
+                alt="Mental Health Event"
+            >
+
+            <button id="shuffleBtn">
+                🔄 Shuffle
+            </button>
+
+        </div>
+
+    </div>  
+    <div class="worked-with-section">
+
+    <div class="marquee">
+
+        <div class="marquee-content">
+            <span>Worked With</span>
+            <span>•</span>
+
+            <span>Schools</span>
+            <span>•</span>
+
+            <span>NGOs</span>
+            <span>•</span>
+
+            <span>Mental Health Advocates</span>
+            <span>•</span>
+
+            <span>Students</span>
+            <span>•</span>
+
+            <span>Communities</span>
+            <span>•</span>
+
+            <!-- Repeat for infinite effect -->
+
+            <span>Worked With</span>
+            <span>•</span>
+
+            <span>Schools</span>
+            <span>•</span>
+
+            <span>NGOs</span>
+            <span>•</span>
+
+            <span>Mental Health Advocates</span>
+            <span>•</span>
+
+            <span>Students</span>
+            <span>•</span>
+
+            <span>Communities</span>
+        </div>
+
+    </div>
+
+</div>
+<section class="about-section">
+
+    <div class="side-images left">
+        <img src="images/download(1).jpg">
+        <img src="images/download(2).jpg">
+        <img src="images/download(3).jpg">
+    </div>
+
+    <div class="about-content">
+
+        <h2>A Safe Space For:</h2>
+
+        <div class="about-banner">
+            Young Minds & Mental Wellness
+        </div>
+
+        <p>
+            The Mental Buddy is a community dedicated to supporting
+            mental health awareness, meaningful conversations, and
+            emotional well-being. Together, we learn, share, and grow.
+        </p>
+
+        <button class="about-btn">
+            Learn More →
+        </button>
+
+    </div>
+
+    <div class="side-images right">
+        <img src="images/download.jpg">
+        <img src="images/download(1).jpg">
+        <img src="images/download(2).jpg">
+    </div>
+
+</section>
+<section class="expect-section">
+
+    <div class="expect-left">
+        <h2>What To<br>Expect</h2>
+    </div>
+
+    <div class="expect-right">
+
+        <div class="expect-item orange">
+            Expert Talks
+            <img src="images/talks.jpg" class="hover-image">
+        </div>
+
+        <div class="expect-item pink">
+            Fun + Games
+            <img src="images/games.jpg" class="hover-image">
+        </div>
+
+        <div class="expect-item yellow">
+            Workshops
+            <img src="images/workshop.jpg" class="hover-image">
+        </div>
+
+        <div class="expect-item orange">
+            Community
+            <img src="images/community.jpg" class="hover-image">
+        </div>
+
+    </div>
+
+</section>
+    <!-- JavaScript MUST be at bottom -->
+    <script>
+        const images = [
+            "images/download.jpg",
+            "images/download (1).jpg",
+            "images/download (2).jpg",
+            "images/download (3).jpg"
+        ];
+
+        const image = document.getElementById("galleryImage");
+        const button = document.getElementById("shuffleBtn");
+
+        button.addEventListener("click", () => {
+            const randomIndex =
+                Math.floor(Math.random() * images.length);
+
+            image.src = images[randomIndex];
+        });
+    </script>
+    <script>
+const items = document.querySelectorAll(".expect-item");
+
+items.forEach(item => {
+
+    const img = item.querySelector(".hover-image");
+
+    item.addEventListener("mousemove", (e) => {
+
+        const rect = item.getBoundingClientRect();
+
+        img.style.left =
+            (e.clientX - rect.left + 40) + "px";
+
+        img.style.top =
+            (e.clientY - rect.top) + "px";
+
+    });
+
+});
+</script>
+
+</body>
+</html>
