@@ -29,23 +29,29 @@
     </div>
 
     <!-- Photo Shuffle Section -->
-    <div class="photo-section">
+<div class="photo-section">
 
-        <div class="photo-card">
+    <div class="photo-card">
 
-            <img
-                id="galleryImage"
-                src="download.jpg"
-                alt="Mental Health Event"
-            >
+        <img
+            id="galleryImage"
+            src="download.jpg"
+            alt="Mental Health Event"
+        >
 
+        <div class="button-row">
             <button id="shuffleBtn">
                 🔄 Shuffle
             </button>
 
+            <button id="galleryBtn">
+                📸 Gallery
+            </button>
         </div>
 
-    </div>  
+    </div>
+
+</div>
     <div class="worked-with-section">
 
     <div class="marquee">
@@ -130,34 +136,99 @@
 <section class="expect-section">
 
     <div class="expect-left">
-        <h2>What To<br>Expect</h2>
+
+        <h2>
+            What To
+            <br>
+            Expect
+        </h2>
+
     </div>
 
     <div class="expect-right">
 
         <div class="expect-item orange">
+
             Expert Talks
+
             <img src="images/talks.jpg" class="hover-image">
+
         </div>
 
         <div class="expect-item pink">
+
             Fun + Games
+
             <img src="images/games.jpg" class="hover-image">
+
         </div>
 
         <div class="expect-item yellow">
+
             Workshops
+
             <img src="images/workshop.jpg" class="hover-image">
+
         </div>
 
         <div class="expect-item orange">
+
             Community
+
             <img src="images/community.jpg" class="hover-image">
+
         </div>
 
     </div>
 
 </section>
+    <!-- Floating Social Button -->
+
+<div class="social-container">
+
+    <div class="social-main">
+        💬
+    </div>
+
+    <div class="social-links">
+
+        <a href="https://instagram.com" target="_blank">
+            Instagram
+        </a>
+
+        <a href="https://meet.google.com" target="_blank">
+            Google Meet
+        </a>
+
+        <a href="https://facebook.com" target="_blank">
+            Facebook
+        </a>
+
+    </div>
+
+</div>
+    <!-- Gallery Popup -->
+
+<div class="gallery-popup" id="galleryPopup">
+
+    <div class="gallery-content">
+
+        <span id="closeGallery">&times;</span>
+
+        <h2>Community Gallery</h2>
+
+        <div class="gallery-grid">
+
+            <img src="download.jpg">
+            <img src="download(1).jpg">
+            <img src="download(2).jpg">
+            <img src="download(3).jpg">
+
+        </div>
+
+    </div>
+
+</div>
     <!-- JavaScript MUST be at bottom -->
     <script>
         const images = [
@@ -197,6 +268,40 @@ items.forEach(item => {
     });
 
 });
+</script>
+    <script>
+
+const galleryBtn =
+document.getElementById("galleryBtn");
+
+const galleryPopup =
+document.getElementById("galleryPopup");
+
+const closeGallery =
+document.getElementById("closeGallery");
+
+galleryBtn.addEventListener("click", () => {
+
+    galleryPopup.style.display = "flex";
+
+});
+
+closeGallery.addEventListener("click", () => {
+
+    galleryPopup.style.display = "none";
+
+});
+
+window.addEventListener("click", (e) => {
+
+    if(e.target === galleryPopup){
+
+        galleryPopup.style.display = "none";
+
+    }
+
+});
+
 </script>
 
 </body>
